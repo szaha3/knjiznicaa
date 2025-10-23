@@ -29,6 +29,30 @@ import { ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
+{
+    title: 'Knjižnica-početna stranica',
+    caption: 'Knjižnica',
+    icon: 'menu_book',
+    link: 'http://localhost:9000/#/',
+  },
+  {
+    title: 'Nove Knjige',
+    caption: 'Popis novih knjiga',
+    icon: 'auto_stories',
+    link: 'http://localhost:9000/#/popisKnjiga',
+  },
+  {
+    title: 'Popis Knjiga',
+    caption: 'Popis knjiga',
+    icon: 'auto_stories',
+    link: 'http://localhost:9000/#/knjige',
+  },  
+  {
+    title: 'GitHub knjižnica',
+    caption: 'GitHub',
+    icon: 'book',
+    link: 'https://github.com/szaha3/knjiznicaa.git',
+  }, 
   {
     title: 'Docs',
     caption: 'quasar.dev',
@@ -71,18 +95,14 @@ const linksList = [
     icon: 'favorite',
     link: 'https://awesome.quasar.dev',
   },
-  {
-    title: 'GitHub knjižnica',
-    caption: 'GitHub',
-    icon: 'book',
-    link: 'https://github.com/szaha3/knjiznicaa.git',
-  },
+  
   {
     title: 'Veleri',
     caption: 'moj faks',
     icon: 'school',
     link: 'https://www.veleri.hr/hr',
   }
+  
 ]
 
 const leftDrawerOpen = ref(false)
