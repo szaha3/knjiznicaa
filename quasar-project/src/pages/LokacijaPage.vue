@@ -21,7 +21,14 @@ export default {
         attribution:
           '&copy;<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(initialMap.value)
+
+      L.marker([45.3312, 14.4322])
+    .addTo(initialMap.value)
+    .bindPopup("Lokacija knjižnice")
+    .openPopup()
+  
     })
+
 
     return {
       initialMap
@@ -31,8 +38,4 @@ export default {
 </script>
 
 <style scoped>
-#map {
-  width: 100%;
-  height: 500px;
-}
 </style>

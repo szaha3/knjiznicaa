@@ -13,28 +13,6 @@
       </q-btn>
     </q-toolbar>
 
-    <q-item clickable v-ripple>
-      <q-item-section thumbnail>
-        <img src="https://www.svijet-knjige.com/mali.princ.ai.6873.260.380.1..jpg">
-      </q-item-section>
-      <q-item-section>Mali Princ</q-item-section>
-    </q-item>
-
-    <q-item clickable v-ripple>
-      <q-item-section thumbnail>
-        <img src="https://ezop-antikvarijat.hr/wp-content/uploads/2019/11/307208392_1073629653525853_5495292819280031631_n.jpg">
-      </q-item-section>
-      <q-item-section>Zločin i kazna</q-item-section>
-    </q-item>
-
-    <q-item clickable v-ripple>
-      <q-item-section thumbnail>
-        <img src="https://www.svijet-knjige.com/bog.sume.ai.13469.260.380.1.km.jpg">
-      </q-item-section>
-      <q-item-section>Bog šume</q-item-section>
-    </q-item>
-
-  
     <q-table
       title="Tablica knjiga"
       :rows="rows"
@@ -43,66 +21,28 @@
       virtual-scroll
       :rows-per-page-options="[5, 10, 20]"
       class="q-mt-lg"
-    />
+    >
+      <template v-slot:body-cell-slika="props">
+        <q-td :props="props" class="text-center">
+          <img
+            :src="props.row.slika"
+            alt="Slika knjige"
+            style="width: 60px; height: auto; border-radius: 4px;"
+          />
+        </q-td>
+      </template>
+    </q-table>
   </q-page>
 </template>
 
 <script setup>
 const columns = [
-  {
-    name: 'id',
-    label: 'ID',
-    field: 'id',
-    align: 'left',
-    sortable: true,
-    style: { fontSize: '14px' },
-    headerStyle: { fontSize: '18px' }
-  },
-  {
-    name: 'naslov',
-    label: 'Naslov',
-    field: 'naslov',
-    align: 'left',
-    sortable: true,
-    style: { fontSize: '14px' },
-    headerStyle: { fontSize: '18px' }
-  },
-  {
-    name: 'autor',
-    label: 'Autor',
-    field: 'autor',
-    align: 'left',
-    sortable: true,
-    style: { fontSize: '14px' },
-    headerStyle: { fontSize: '18px' }
-  },
-  {
-    name: 'opis',
-    label: 'Opis',
-    field: 'opis',
-    align: 'left',
-    sortable: false,
-    style: { fontSize: '14px' },
-    headerStyle: { fontSize: '18px' }
-  },
-  {
-    name: 'slika',
-    label: 'Slika',
-    field: 'slika',
-    align: 'center',
-    sortable: false,
-    style: { fontSize: '14px' },
-    headerStyle: { fontSize: '18px' }
-  },
-  {
-    name: 'status',
-    label: 'Status',
-    field: 'status',
-    align: 'center',
-    sortable: true,
-    style: { fontSize: '14px' },
-    headerStyle: { fontSize: '18px' }
-  }
+  { name: 'id', label: 'ID', field: 'id', align: 'left', sortable: true },
+  { name: 'naslov', label: 'Naslov', field: 'naslov', align: 'left', sortable: true },
+  { name: 'autor', label: 'Autor', field: 'autor', align: 'left', sortable: true },
+  { name: 'opis', label: 'Opis', field: 'opis', align: 'left' },
+  { name: 'slika', label: 'Slika', field: 'slika', align: 'center' },
+  { name: 'status', label: 'Status', field: 'status', align: 'center', sortable: true }
 ]
 
 const rows = [
