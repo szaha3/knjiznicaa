@@ -21,9 +21,17 @@
         {{ item }}
       </button>
      </p>
+      
+     <a :href="link.url" :target="link.target"> {{link.text}} </a>
+
+     <q-input color="purple-12" v-model="text" label="Ime" @keyup="log()"> </q-input>
+     <q-input color="purple-12" v-model="text" label="Prezime" @keyup="log()"> </q-input>
+
+
      
      
   </q-page>
+
 </template>
 
 <script setup>
@@ -32,5 +40,23 @@
   const tijelo="tekst na starnici"
   const htmlTekst="<p><b>Formatirani teskt</b> na stranici</p>"
   const days=['pon','uto','sri']
+
+  const link = {
+    url: 'http://www.google.com',
+    target: '_blank',
+    text: 'Google'
+  }
+
+  import { ref } from 'vue'
+  const text = ref('')
+  text.value = "Ime"
+
+  function log() {
+    console.log(text.value)
+  }
+  
+
+
+
 
 </script>
