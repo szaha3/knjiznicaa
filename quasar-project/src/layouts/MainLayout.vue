@@ -70,7 +70,13 @@ const linksList = [
     caption: 'Registracija',
     icon: 'auto_stories',
     link: 'http://localhost:9000/#/registracija',
-  },      
+  },
+  {
+    title: 'Unos novih knjiga',
+    caption: 'Unos novih knjiga',
+    icon: 'auto_stories',
+    link: 'http://localhost:9000/#/unosnovihknjiga',
+  },          
   {
     title: 'GitHub knjižnica',
     caption: 'GitHub',
